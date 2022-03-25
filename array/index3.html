@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    /* Drofo e Topper estão em uma aventura mágica. Faça um programa que contenha um inventário para cada um dos dois aventureiros - esse inventário será um array.
+Drofo terá um anel da invisibilidade, dois pares de botas mágicas, uma poção do sono e duas poções da inocência em seu inventário e nessa ordem. 
+Torper terá uma capa da invisibilidade, uma pedra do despertar,  uma varinha das varinhas, uma poção da inocência e duas poções da mentira, poção anti-inteligência e nessa ordem. 
+
+No meio de sua jornada, Torper consumiu uma das poções da mentira, perdeu sua pedra e ganhou um par de botar mágicas do Drofo, achou um escudo mágico e uma espada mágica. 
+Descreva cada uma das ações acima. utilizando código (utilize comentários para ficar mais claro). 
+
+No meio da sua jornada, Drofo, ganhou mais uma bota mágica, usou sua poção do sono e consumiu a poção anti-inteligência do Torper, encontrou um ovo de dragão e uma coxinha.
+Descreva cada uma das ações acima. utilizando código.
+
+Exiba o resultado final de cada um dos inventários utilizando "document.write"*/
+
+var toper=['Capa da invisibilidade',' pedra do despertar',' varinha das varinhas',' poção da inocência',' poção da mentira',' poção da mentira','poção da anti-inteligência'];
+var drofo=['Anel da invisibilidade', ' par de botas mágicas',' par de botas mágicas',' poção do sono',' poção da inocência ',' poção da inocência'];
+
+
+/*Toper consumiu uma das porcoes da mentira*/
+toper.splice(4,1);
+
+/*toper perdeu sua pedra*/
+toper.splice(1,1);
+
+/*toper ganhou um par de botas magicas do drofo*/
+toper.push(' par de botas mágicas');
+
+/*achou um escudo magico  e uma espada magica*/
+toper.push(' escudo mágico', ' espada mágica');
+
+
+/*drofo deu uma bota para toper*/
+drofo.splice(1,1);
+
+
+
+//drofo ganhou uma bota mágica
+drofo.push(' bota mágica');
+
+//drafo usou sua pocao do sono
+
+drofo.splice(3,1);
+
+//drafo consumiu a pocao anti inteligenvia do toper
+toper.push(' poção anti-inteligencia');
+
+//encontrou um ovo de dragao e uma coxinha 
+drofo.push(' ovo de dragão e uma coxinha')
+
+document.write('<h2>Os itens finais de Drofo foi:</h2> '+drofo+'<h2> E os itens finais de Topper foi:</h2> ' +toper)
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+</head>
+<body>
+    
+</body>
+</html>
