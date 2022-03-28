@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script>
+
+var saldo=1000.00;
+var nome=prompt("Infome seu nome");
+
+
+
+
+function senha1(){
+    var senha=parseInt(prompt('Informe sua senha'));
+
+        if(senha==3589){
+            
+            
+        }
+        else{
+            alert('Acesso Negado, informe sua senha corretamente');
+            senha1()
+        }  
+        
+    }
+
+
+
+function inicio(){
+
+
+    var escolha= parseInt(prompt('Olá, ' +nome+ '! é um prazer ter você aqui! '+' \nSelecione uma das opções abaixo:\n 1.)Saldo 2.)Extrato 3.)Saque 4.)Depósito 5.)Transferência 6.)Sair'));
+
+if(escolha<=6 && escolha >=1){
+switch(escolha){
+    
+case 1:
+    versaldo();
+    break;
+case 2:
+    verextrato();
+     break;
+case 3:
+    fazersaque();
+    break;
+case 4:
+    fazerdeposito();
+    break;
+case 5:    
+    transferencia();
+      break;
+case 6:
+    sair(); }}
+
+else{
+    erro()
+}
+}
+
+
+function versaldo(){
+    senha1();
+    if( isNaN(saldo) || saldo<=0 ){
+        alert('Operação não autorizada');
+        fazersaque();
+         versaldo();
+        }
+else{
+     alert('Seu saldo é de: '+saldo);
+     inicio();
+}
+}
+
+function verextrato(){
+    senha1();
+    alert('Seu extrato\nCatapimbas mercadinho:R$300,00\nSabesp:R$120,00\nEnel:R$200,00\nAcademia:R$90,00');
+    inicio();
+}
+
+function fazersaque(){
+    senha1();
+     var saque=parseFloat(prompt('Qual o valor do saque?'));
+
+     if( isNaN(saque) || saque<=0){
+        alert('Operação não autorizada');
+        fazersaque();
+        
+    }
+
+     else{
+         saldo -=saque;
+         versaldo();
+         inicio();
+     }
+    }
+
+function fazerdeposito(){
+    senha1()
+    var soma= parseFloat(prompt('Informe o valor do saque:'))
+    if( isNaN(soma) || soma==='' || soma<=0){
+        alert('Operação não autorizada\nDica: Confira se não usou nenhuma letra ou caractere especial' );
+        transferencia();
+}
+else{
+    saldo+=soma
+    versaldo();
+    inicio();
+}
+}
+
+
+
+function transferencia(){
+    senha1();
+var nome2=parseFloat(prompt('Informe o número da conta'))
+    if( isNaN(nome2) || nome2===''){
+        alert('Operação não autorizada\nDica: Confira se não usou nenhuma letra ou caractere especial' );
+        transferencia();}
+
+var sub=parseFloat(prompt('Qual o valor para a trânsferencia?'))
+    if (isNaN(sub) || sub<=0 || sub>saldo){
+        alert('Operação não autorizada\nDica: Confira se não usou nenhuma letra ou caractere especial' );
+        transferencia();}
+
+else{
+   saldo-=sub;
+   alert('Tranferência de '+sub+' relizada com sucesso')
+   versaldo();
+   inicio();
+}
+}
+
+
+function sair(){
+    var confirma= confirm("Deseja sair?");
+    if(confirma){
+        alert(nome+', foi um prazer ter você aqui.')
+        window.close();
+    }
+    else{
+        inicio()
+    }
+}
+
+function erro() {
+			alert('Por favor, informe um número entre 1 e 6');
+			inicio();
+		}
+
+
+
+inicio()
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>
