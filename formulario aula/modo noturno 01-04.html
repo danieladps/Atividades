@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Formulário</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family:Arial, Courier, monospace;
+        }        
+        
+        /* EQUIPE 5 */
+        body {
+            background: #333 url(FOTO\ TESTE.jpeg);
+            background-size: cover;
+        }
+
+        h1 {
+            text-align: center;
+            margin:3% 0;
+            color: #FFF;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width:80%;
+            margin: 0 auto 20px;
+            padding: 2%;
+            background: rgba(11,11,11,.7);
+        }
+
+        label {
+            color: #efefef;
+            margin: 4% 0 0;
+            font-size: 16px;
+        }
+
+        input {
+            color: #efefef;
+            background: transparent;
+            font-size: 16px;
+            border: 0;
+            padding: 2%;
+            border: 2px solid #efefef;;
+            border-bottom: 1px solid #fefefe;
+            border-radius: 0 20px 0 50px;
+            outline: 0; /* Outline remove a borda que aparece ao clicar em um input*/
+        }
+
+        input[type=submit] {
+            background: #efefef;
+            margin: 2% auto;
+            color: #333332;
+            width: 50%;
+            border: 0;
+            border-radius: 0;
+            cursor: pointer;
+            transition: all 0.6s;
+        }
+
+        input[type=submit]:hover {
+            border:0;
+            color: #efefef;
+            background: #222222;
+            width: 60%;
+        }   
+        
+        input:focus {
+            background: rgba(11,11,11,.5);;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* EQUIPE 3 */
+        body.modo-noturno  {
+            /* background: #0ABAB5 url(  ) center bottom; */
+            background: #0ABABB;
+        }
+
+        .modo-noturno h1 {
+            text-align: center;
+            font-size: 26px;
+            margin: 10px 0;
+            color:#336699;
+        }
+
+        .modo-noturno form {
+            border: 1px solid #fff;
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            margin: 0 auto 30px auto;
+            background: rgba(33,33,44,.5);
+        }
+
+        .modo-noturno label {
+            color:#07344e;
+            margin:20px auto 0;
+            width:80%;
+        }
+
+        .modo-noturno input {
+            background: transparent;
+            border: 0;
+            border-bottom: 2px solid #FFF;
+            outline: 0;
+            width:80%;
+            margin:20px auto 0;
+            transition: all 0.6s;
+
+
+            /* 
+            border-top: 1px solid #FFF;
+            border-right: 1px double red;
+            border-left: 2px dotted #FFF;
+            border-bottom: 1px dashed #FFF; */
+        }
+
+        .modo-noturno input:focus {
+            border-bottom: 2px solid #336699;
+        }
+
+        .modo-noturno input[type="submit"] {
+            background: #07344e;
+            font-size:18px;
+            color: #FFFFFF;
+            padding: 1%;
+            max-width: 350px;
+            margin:10px auto;
+            border:0;
+            cursor: pointer;
+        }
+
+        .modo-noturno input[type="submit"]:hover {
+            background: #336699;
+            font-size:24px;
+            margin:15px auto;
+            max-width: 325px;
+        }
+
+        .modo-noturno input[type="submit"]:focus {
+            background: red;
+        }
+
+
+
+
+    </style>
+
+</head>
+<body id="corpo" class="modo-noturno">   <!--id é único e não pode repetir-->
+
+    <h1>Exemplo de Formulário</h1>
+    
+    <button onclick="troca_tema()">Clique aqui para trocar o tema</button>
+    <!--onclick ao clicar no elemento (ex troca_tema())  -->
+
+    <button onclick="troca_conteudo()">Clique aqui para trocar o conteudo</button>
+
+    
+    <button onclick="troca_nome()">Clique aqui para trocar o nome</button>
+
+    <button onclick="pega_nome()">Clique aqui para pegar o nome</button>
+
+    <form id="formulario" method="get" action="">
+        <label for="nome">Nome da Pessoa</label>
+        <input type="text" id="nome" minlength="10" maxlength="11" name="nome2" required>
+        
+        <label for="sobrenome">Sobrenome da Pessoa</label>
+        <input type="text" id="sobrenome" value="Oliveira Melo" name="sobrenome">
+        <!-- value valor do campo-->
+
+        <label for="email">E-mail da Pessoa</label>
+        <input type="email" id="email" maxlength="11" name="email"> 
+
+        <label for="phone">Telefone da Pessoa</label>
+        <input type="tel" id="phone" maxlength="11" name="phone">
+
+        <label for="doc">Documento da Pessoa</label>
+        <input type="number" id="doc" maxlength="25" name="doc" placeholder="Escreva somente números">        
+
+        <label for="senha">Senha da Pessoa</label>
+        <input type="password" id="senha" name="senha">
+
+        <input type="submit" value="Beterraba">
+    </form>
+
+    <script>
+        //document.getElementById("corpo").classList.remove("modo-noturno");
+        //document.getElementById("corpo")(pegue o elemento pelo id).classList(manipule a classe desse elemento que no caso é 'corpo').remove("modo-noturno");  
+        //remove, tira o id 'corpo'. add, adiciona o id "corpo"
+        //document.getElementById("corpo").classList.add("modo-noturno"); 
+
+        function troca_tema() {
+            document.getElementById("corpo").classList.toggle("modo-noturno"); 
+// toggle adiociona se a classe estiver lá ou remove se a classe não estiver lá
+// se não achar o modo noturno ele add, se achar ele remove 
+        }
+
+        function troca_conteudo() {
+            document.getElementById("formulario").innerHTML = "<h1>Você trocou o conteúdo</h1>";
+        //innerHTML é o html interno do elemento pode usar o 
+        
+        } 
+        
+        function troca_nome() {
+            document.getElementById("nome").value = "Gabriel Augusto";
+        } 
+
+        function pega_nome() {
+            var nome = document.getElementById("nome").value;
+            alert(nome)
+        }         
+    </script>
+</body>
+</html>

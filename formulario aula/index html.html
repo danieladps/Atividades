@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="  ">
+    <title>Exemplo de Formulário</title>
+
+<style>/*reset de css*/
+
+
+/* arterisco* serve para pegar tudo ex:
+*{lalalaal} o arterisco pegou todos os elementos, body, div, h1,h2, label, input e todos os elementos
+.painel* {pega todos os elementos dentro da div painel}*/
+
+* {
+    margin:0;
+    padding:0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body{
+    background: #333 url(teste.jpeg);
+    background-size:cover ;
+}
+
+
+h1{
+    text-align: center;
+    margin: 3% 0;  /*exemplo: margin: 1% 0 1% 0; top, right, botton, left 
+    (1% para cima, 0 para a direita, 1% para baixo, 0 para esquerda. 
+    Serve para diminuir o codigo)*/
+    color: #fff; 
+
+}
+
+form{
+    display: flex; /*flex serve para alinhar o elemento dentro 
+    dele no sentido vertival e horizontal*/ 
+    flex-direction: column; /*para os elementos ficarem acima do outro*/
+    width: 80%;
+    margin: 0 auto; /* alinhar o elemento ao centro pq 0 para cima 0 para baixo. 
+    ele calcula para ficar na mesma distância*/ 
+    padding: 2%;/*preenchemento, espaçamento dentro do conteudo.
+     a borda do conteudo não fica colada na borda do elemento. ele aumenta o espaço */
+    background: rgba(11,11,11,.5);/* o rgba dá uma ceta transparencia diferente do #*/
+    
+
+}
+
+label{
+    color: #efefef;
+    margin:  2% 0 0;
+    font-size: 16px;
+}
+
+input{
+    color: #efefef;
+    background: transparent; /* aquele que deixa tanspassar a informação*/
+    border: 0 ; /* toda borda é formada de 3 propriedades. espessura, estilo e cor da borda
+    
+    border é igual margin pode ter top,right,left e bottom
+    estilo: 
+    solid: borda reta
+    dotted: pontilhado
+    dashed: tracejado
+    double; duas linhas
+*/  border: 2px solid #efefef;
+    padding: 2%;
+    border-bottom: 1px solid #fefefe;/* fica abenas uma linha embaixo*/
+    border-radius: 4px 0px 0px 4px;/*propriedade de 4 valores tbm igual o margin.*/
+    font-size: 16px;
+    outline: 0; /* remove a borda que aparece ao clicar em um input.*/
+
+}
+
+input[type=submit] {  /* hover: mouse por cima do elemento */
+    background: #efefef;
+    margin: 2% auto;
+    color: #333332;
+    width: 50%;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.3s;  /* transition usa em outro elemento fora do hover*/
+}
+
+ input[type=submit]:hover{
+    border: 0;
+    color: #efefef;
+    background: #222222;
+    width: 60%;
+ }
+
+input:focus{
+    background: rgba(11,11,11,.5);;
+}
+
+
+</style>
+
+</head>
+<body>
+
+    <h1>Exemplo de Formulário</h1>
+<!---div-->
+
+    <form>
+        <label for="nome">Nome da Pessoa</label> 
+        <input type="text" id="nome" minlength="10" name="nome2" required>
+
+        <label for="sobrenome">Sobrenome da Pessoa</label>
+        <input type="text" id="sobrenome" name="sobrenome">
+
+        <label for="email">E-mail da Pessoa</label>
+        <input type="email" id="email" maxlength="11" name="email"> 
+
+        <label for="phone">Telefone da Pessoa</label>
+        <input type="tel" id="phone" maxlength="11" name="phone">
+
+        <label for="doc">Documento da Pessoa</label>
+        <input type="number" id="doc" maxlength="25" name="doc" placeholder="Escreva somente números">        
+
+        <label for="senha">Senha da Pessoa</label>
+        <input type="password" id="senha" name="senha">  
+
+        <!--<input type="button" value="Exemplo genérico">-->
+
+        <!---<input type="reset" value="Exemplo genérico">-->
+
+ <!--
+//label é a pergunta
+//required faz com que o campo fique obrigatorio caso o usuario não informe nada        
+//area de entrada, onde pode o usuario pode colocar informações,  
+//a label só exite para o input e o input pode existir sem label mas não faz sentido ter sem a label
+// o input tem um atributo que é muito importante que é o type, ele recebe alguma informação ex; texto, submit(mandar, enviar, todas as informações que etiverem no input ex: nome, idade e etc informação que o usuario vai enviar)
+// input text, abre a caixa para digitar coisas
+//input submit para enviar coisas
+// minlength quantidade minima de caracteres
+// maxlength quantidade maxima de caracteres
+//type button  são informaçoes que so são colocadas ali ex:clique aqui para gerar um token 
+serve para qualque funçã que não seja o envio, o envio é pelo sumit qualquer outra funão é pelo button
+// type reset ao ivez de button serve para resetar as informações
+// name:
+//placeholder: intrução para ele escrever so numero
+
+
+-->
+
+
+
+
+
+
+
+        <!--
+        <label for="sobrenome">Sobrenome da Pessoa</label>
+        <input type="text" id="sobrenome" name="sobrenome">
+
+        <label for="email">E-mail da Pessoa</label>
+        <input type="email" id="email" maxlength="11" name="email">    
+
+        <label for="phone">Telefone da Pessoa</label>
+        <input type="tel" id="phone" maxlength="11" name="phone">
+
+        <label for="doc">Documento da Pessoa</label>
+        <input type="number" id="doc" maxlength="25" name="doc" placeholder="Escreva somente números">        
+
+        <label for="senha">Senha da Pessoa</label>
+        <input type="password" id="senha" name="senha">            
+
+        <input type="button" value="Exemplo genérico">
+        <button> </button>
+        -->
+        <input type="submit" value="Vamos lá">
+    </form>
+
+</body>
+</html>
